@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-svc-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chat-svc
+  template:
+    metadata:
+      labels:
+        app: chat-svc
+    spec:
+      containers:
+        - name: chat-svc
+          image: nginx:latest
+          ports:
+            - containerPort: 3000

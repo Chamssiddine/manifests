@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notif-svc-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: notif-svc
+  template:
+    metadata:
+      labels:
+        app: notif-svc
+    spec:
+      containers:
+        - name: notif-svc
+          image: nginx:latest
+          ports:
+            - containerPort: 3000

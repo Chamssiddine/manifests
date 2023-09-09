@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: socket-svc-service
+spec:
+  selector:
+    app: socket-svc
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer

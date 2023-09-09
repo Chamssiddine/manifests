@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calendar-svc-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: calendar-svc
+  template:
+    metadata:
+      labels:
+        app: calendar-svc
+    spec:
+      containers:
+        - name: calendar-svc
+          image: nginx:latest
+          ports:
+            - containerPort: 3000

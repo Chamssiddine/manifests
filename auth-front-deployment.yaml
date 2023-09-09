@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-front-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: auth-front
+  template:
+    metadata:
+      labels:
+        app: auth-front
+    spec:
+      containers:
+        - name: auth-front
+          image: nginx:latest
+          ports:
+            - containerPort: 3000

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nesapi-gw-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nesapi-gw
+  template:
+    metadata:
+      labels:
+        app: nesapi-gw
+    spec:
+      containers:
+        - name: nesapi-gw
+          image: nginx:latest
+          ports:
+            - containerPort: 3000
