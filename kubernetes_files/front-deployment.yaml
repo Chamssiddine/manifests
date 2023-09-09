@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project-svc-deployment
+  name: front-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: project-svc
+      app: front
   template:
     metadata:
       labels:
-        app: project-svc
+        app: front
     spec:
       containers:
-        - name: project-svc
+        - name: front
           image: nginx:latest
           ports:
             - containerPort: 3000

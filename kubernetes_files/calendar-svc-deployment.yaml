@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chat-svc-deployment
+  name: calendar-svc-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: chat-svc
+      app: calendar-svc
   template:
     metadata:
       labels:
-        app: chat-svc
+        app: calendar-svc
     spec:
       containers:
-        - name: chat-svc
+        - name: calendar-svc
           image: nginx:latest
           ports:
             - containerPort: 3000

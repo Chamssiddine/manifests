@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: socket-svc-deployment
+  name: project-svc-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: socket-svc
+      app: project-svc
   template:
     metadata:
       labels:
-        app: socket-svc
+        app: project-svc
     spec:
       containers:
-        - name: socket-svc
+        - name: project-svc
           image: nginx:latest
           ports:
             - containerPort: 3000

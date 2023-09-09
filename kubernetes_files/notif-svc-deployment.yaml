@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-front-deployment
+  name: notif-svc-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: auth-front
+      app: notif-svc
   template:
     metadata:
       labels:
-        app: auth-front
+        app: notif-svc
     spec:
       containers:
-        - name: auth-front
+        - name: notif-svc
           image: nginx:latest
           ports:
             - containerPort: 3000
